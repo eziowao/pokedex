@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web:
+    container_name: pokedex
+    image: php:8.3-apache
+    ports:
+      - "8098:80"
+    volumes: 
+      - /Users/wav/projects/pokedex/www:/var/www/html
