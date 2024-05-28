@@ -6,7 +6,6 @@
     <title>Accueil</title>
 </head>
 <body>
-    
     <?php
         foreach ($allTypes as $type) {?>
             <a href="./../../controllers/pokemonListController.php?name=<?=$type->name?>"><img src="<?=$type->image?>" alt="type <?=$type->name?>"></a>
