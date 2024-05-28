@@ -1,0 +1,18 @@
+# Activer le moteur de réécriture
+RewriteEngine On
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^controllers/typeListController\.php$ /accueil [R=301,L,NC]
+# Redirection de accueil.html vers index.php
+RewriteRule ^accueil$ /controllers/typeListController.php [L,NC]
+
+# Redirection de parametre.html vers /user/config.php
+RewriteRule ^parametre\.html$ /controllers/configController.php [L]
+
+RewriteRule ^type1\.html$ /controllers/pokemonListController.php?name=1 [L,QSA]
+
+# Redirection de pokemon1.html vers /pokemon/detail.php avec un identifiant de pokemon spécifique
+# Supposons que "1" soit l'ID du pokemon
+RewriteRule ^pokemon1\.html$ /controllers/pokemonDetailController.php?id=1 [L,QSA]
+
+# Redirection de favoris.html vers /favour/list.php
+RewriteRule ^favoris\.html$ /favour/list.php [L]
