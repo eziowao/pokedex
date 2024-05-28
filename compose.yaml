@@ -2,8 +2,9 @@ version: "3.8"
 services:
   web:
     container_name: pokedex
-    image: php:8.3-apache
+    build: .
     ports:
       - "8098:80"
     volumes:
       - ./www:/var/www/html
+    restart: always
