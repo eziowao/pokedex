@@ -12,7 +12,7 @@
     <li><?= $pokemon->name; ?></li>
     <img src="<?= $pokemon->image ?>" alt="">
     <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?> ">Clic</a>
-    <button id="add_in_favour" type="btn" data-id="<?= $pokemon->id ?>">Ajouter aux favoris</button>
+    <button class="add_in_favour" type="btn" data-id="<?= $pokemon->id ?>">Ajouter aux favoris</button>
   <?php endforeach ?>
   <!-- !!!! Exemple de contenu de variable $pokemon
     {
