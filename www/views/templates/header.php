@@ -21,13 +21,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-around w-100 d-flex">
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-2" href="#">Accueil <i class="fa-solid fa-house ms-4"></i></a>
+                        <a class="nav-link fs-2" href="./../../controllers/typeListController.php">Accueil <i class="fa-solid fa-house ms-4"></i></a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-2" href="#">Favoris <i class="fa-solid fa-star ms-4"></i></a>
+                        <a class="nav-link fs-2" href="./../../controllers/favourListController.php">Favoris <i class="fa-solid fa-star ms-4"></i></a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-2" href="#">Paramètres <i class="fa-solid fa-cog ms-4"></i></a>
+                        <a class="nav-link fs-2" href="./../../controllers/configController.php">Paramètres <i class="fa-solid fa-cog ms-4"></i></a>
                     </li>
                 </ul>
             </div>

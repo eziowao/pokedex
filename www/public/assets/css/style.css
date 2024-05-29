@@ -4,3 +4,30 @@
     background-color: #4C3B8B !important;
     
 }
+
+.bg-custom{
+    background: url(./../img/gengar.jpg) no-repeat right 40%;
+    background-color: #000000;    
+}
+
+.footer-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+
+}
+
+.overlay-footer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+footer{
+    position: relative;
+}
+
+
+
