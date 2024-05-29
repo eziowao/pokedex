@@ -1,3 +1,5 @@
+/* fonts  */
+
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 @font-face {
@@ -16,4 +18,21 @@ h1 {
 
 body {
     font-family: 'Play';
+}
+
+/* header  */
+
+.bg-purple {
+    background-color: #4C3B8B !important;
+}
+
+/* search bar  */
+
+.form-control:hover {
+    box-shadow: 0px 0px 6px -2px white;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
 }
