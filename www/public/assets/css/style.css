@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Pokemon light';
+    src: url('../fonts/Pokemon\ Hollow.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Pokemon dark';
+    src: url('../fonts/Pokemon\ Solid.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'Pokemon dark';
+}
+
+body {
+    font-family: 'Play';
+}
