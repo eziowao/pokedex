@@ -8,6 +8,9 @@
 </head>
 
 <body>
+  <input type="text" id="searchInput" placeholder="Rechercher">
+  <div id="searchResults"></div>
+  <h1 id="<?= $typeName  ?>"><?= $typeName  ?></h1>
   <?php foreach ($listOfPokemons as $pokemon) : ?>
     <li><?= $pokemon->name; ?></li>
     <img src="<?= $pokemon->image ?>" alt="">

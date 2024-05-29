@@ -14,9 +14,9 @@ RewriteRule ^controllers/favourListController\.php$ /favoris [R=301,L,NC]
 RewriteRule ^favoris$ controllers/favourListController.php [L,NC]
 
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
-RewriteCond %{QUERY_STRING} type=([a-zA-Z]+)
+RewriteCond %{QUERY_STRING} type=([0-9]+)
 RewriteRule ^controllers/pokemonListController\.php$ /type%1? [R=301,L,NC]
-RewriteRule ^type([a-zA-Z]+)$ /controllers/pokemonListController.php?type=$1 [L,QSA]
+RewriteRule ^type([0-9]+)$ /controllers/pokemonListController.php?type=$1 [L,QSA]
 
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{QUERY_STRING} id=([0-9]+)

@@ -1,5 +1,8 @@
 const btnAddFavour = document.querySelectorAll(".add_in_favour");
 const btnDeleteFavour = document.querySelectorAll(".delete_from_favour");
+const searchInput = document.querySelector("#searchInput");
+const searchResults = document.querySelector("#searchResults");
+const header = document.querySelector("h1");
 
 const getId = (event) => {
   const id = event.target.dataset.id;
@@ -17,11 +20,7 @@ const deletePokemonFromFavoritesCookies = (pokemonId) => {
     favorites = favorites.filter((favoriteId) => favoriteId !== pokemonId);
   }
 
-  document.cookie =
-    "favorites=" +
-    JSON.stringify(favorites) +
-    "; path=/; max-age=" +
-    60 * 60 * 24 * 30; // 30 jours
+  setFavoritesInCookies(favorites);
 
   const pokemonDiv = document.querySelector("#pokemon" + pokemonId);
   pokemonDiv.remove();
@@ -32,9 +31,13 @@ const addPokemonToFavoritesCookies = (pokemonId) => {
   if (!favorites.includes(pokemonId)) {
     favorites.push(pokemonId);
   }
+  setFavoritesInCookies(favorites);
+};
+
+const setFavoritesInCookies = (data) => {
   document.cookie =
     "favorites=" +
-    JSON.stringify(favorites) +
+    JSON.stringify(data) +
     "; path=/; max-age=" +
     60 * 60 * 24 * 30; // 30 jours
 };
@@ -44,6 +47,38 @@ const getFavoritesFromCookies = () => {
   return matches ? JSON.parse(decodeURIComponent(matches[1])) : [];
 };
 
+const type = header.getAttribute("id");
+
+const getResults = (e) => {
+  let searchText = e.target.value;
+  if (searchText.trim() === "") {
+    searchResults.innerHTML = "";
+  } else {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/controllers/searchController.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        var results = JSON.parse(xhr.responseText);
+        var resultsHTML = results
+          .map(function (result) {
+            return "<div>" + "<h3>" + result.name + "</h3>" + "<p>";
+          })
+          .join("");
+        searchResults.innerHTML = resultsHTML;
+      }
+    };
+
+    xhr.send(
+      "query=" +
+        encodeURIComponent(searchText) +
+        "&type=" +
+        encodeURIComponent(type)
+    );
+  }
+};
+
 btnAddFavour.forEach((button) => {
   button.addEventListener("click", getId);
 });
@@ -51,3 +86,5 @@ btnAddFavour.forEach((button) => {
 btnDeleteFavour.forEach((button) => {
   button.addEventListener("click", getId);
 });
+
+searchInput.addEventListener("input", getResults);
