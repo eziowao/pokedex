@@ -44,7 +44,9 @@ body{
     background-size: contain;
 }
 
-
+.bg-fighting{
+    background-color: red;
+}
 
 /* footer  */
 

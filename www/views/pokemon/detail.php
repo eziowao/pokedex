@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +9,44 @@
 </head>
 
 <body>
-    <p><?= $pokemonDetail->name ?></p>
-    <img src="<?= $pokemonDetail->image ?>" alt="">
-    <p>HP: <?= $pokemonDetail->stats->HP ?></p>
+  <div class="pokemon-name bg-warning d-flex flex-column align-items-center">
+    <div class="d-flex align-items-center">
+    <img src="<?= $pokemonDetail->sprite ?>" alt="sprite du pokemon">
+      <h2 class="ms-5"><?= $pokemonDetail->name ?></h2>
+      <i class="fa-regular fa-star fa-lg ms-3"></i>
+      
+    </div>
+    <p>Génération : <?= $pokemonDetail->apiGeneration ?></p>
+  </div>
+  <div class="pokemon-image text-center">
+    <img src="<?= $pokemonDetail->image ?>" alt="image du pokemon">
+  </div>
+  <div class="d-flex justify-content-between">
+    <div class="pokemon-stats ms-5">
+      <h3>Stats :</h3>
+      <ul>
+        <li>HP: <?= $pokemonDetail->stats->HP ?></li>
+        <li>Attaque : <?= $pokemonDetail->stats->attack ?></li>
+        <li>Defense : <?= $pokemonDetail->stats->defense ?></li>
+        <li>Attaque spéciale <?= $pokemonDetail->stats->special_attack?></li>
+        <li>Défense spéciale : <?= $pokemonDetail->stats->special_defense ?></li>
+        <li>Vitesse : <?= $pokemonDetail->stats->speed ?></li>
+      </ul>
+    </div>
+    <div class="pokemon-types me-5">
+      <h3>Types :</h3>
+      <?php foreach ($pokemonDetail->apiTypes as $type): ?>
+                        <div class="d-inline-block mr-2">
+                            <img src="<?= htmlspecialchars($type->image) ?>" alt="<?= htmlspecialchars($type->name) ?>" title="<?= htmlspecialchars($type->name) ?>" class="img-fluid">
+                            <h3 class="text-center"><?= $type->name ?></h3>
+                        </div>
+                    <?php endforeach; ?>
+    </div>
+  </div>
+  <div>
+    <h3>Arbre d'évolution</h3>
+
+  </div>
     <!-- !!!! Exemple de contenu de variable $pokemonDetail
     {
  "id": 850,
