@@ -8,12 +8,45 @@
 </head>
 
 <body>
-  <?php foreach ($listOfPokemons as $pokemon) : ?>
-    <li><?= $pokemon->name; ?></li>
-    <img src="<?= $pokemon->image ?>" alt="">
-    <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?> ">Clic</a>
-    <button id="add_in_favour" type="btn" data-id="<?= $pokemon->id ?>">Ajouter aux favoris</button>
-  <?php endforeach ?>
+
+  <div class="bg-purple pb-3">
+    <form class="row align-items-center justify-content-center">
+      <div class="col-10 col-lg-5">
+        <input class="form-control rounded-5 my-1" type="search" placeholder="Bulbizarre ou #001" aria-label="Rechercher">
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 id="<?= $type ?>" class="text-center my-5"> <?= $type ?> </h1>
+
+      <?php foreach ($listOfPokemons as $pokemon) : ?>
+        <div class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
+          <div class="card-body">
+            <div class="d-flex align-items-baseline ">
+              <div class="col-10">
+                <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
+              </div>
+              <div class="col-2 d-flex justify-content-end">
+                <button id="add_in_favour" class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="fa-regular fa-star fa-lg"></i> </button>
+              </div>
+
+            </div>
+            <p> #0<?= $pokemon->pokedexId; ?></p>
+            <div class="d-flex justify-content-center pt-4">
+              <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?> ">
+                <img src="<?= $pokemon->image ?>" height="150px" alt="">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      <?php endforeach ?>
+
+    </div>
+  </div>
+
   <!-- !!!! Exemple de contenu de variable $pokemon
     {
     "id": 7,
