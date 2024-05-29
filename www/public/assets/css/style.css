@@ -1,13 +1,56 @@
-/* ########## NAVBAR ########## */
+/* fonts  */
 
-.bg-purple{
-    background-color: #4C3B8B !important;
-    
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Pokemon light';
+    src: url('../fonts/Pokemon\ Hollow.ttf') format('truetype');
 }
 
-.bg-custom{
+@font-face {
+    font-family: 'Pokemon dark';
+    src: url('../fonts/Pokemon\ Solid.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'Pokemon dark';
+}
+
+body {
+    font-family: 'Play';
+}
+
+/* header  */
+
+.bg-purple {
+    background-color: #4C3B8B !important;
+}
+
+/* search bar  */
+
+.form-control:hover {
+    box-shadow: 0px 0px 6px -2px white;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* ######### BODY ##########*/
+
+body{
+    background: url(./../img/PokemonList.png) no-repeat right bottom;
+    background-size: contain;
+}
+
+
+
+/* footer  */
+
+.bg-custom {
     background: url(./../img/gengar.jpg) no-repeat right 40%;
-    background-color: #000000;    
+    background-color: #000000;
 }
 
 .footer-content {
@@ -16,7 +59,7 @@
 
 }
 
-.overlay-footer{
+.overlay-footer {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -27,6 +70,13 @@
 
 footer{
     position: relative;
+}
+
+/* ######### 404 ##########*/
+
+.error-img{
+    max-width: 50%;
+    height: auto;
 }
 
 

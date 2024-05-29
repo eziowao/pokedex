@@ -6,10 +6,9 @@ function AllTypes()
 {
     // json pour les types
     $json = @file_get_contents(POKEMON_TYPES);
-    
     if ($json === false) {
         $types = false;
-    }else {
+    } else {
         $types = json_decode($json);
     }
     return $types;
