@@ -1,18 +1,24 @@
 # Activer le moteur de réécriture
 RewriteEngine On
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
+
 RewriteRule ^controllers/typeListController\.php$ /accueil [R=301,L,NC]
-# Redirection de accueil.html vers index.php
 RewriteRule ^accueil$ /controllers/typeListController.php [L,NC]
 
-# Redirection de parametre.html vers /user/config.php
-RewriteRule ^parametre\.html$ /controllers/configController.php [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^controllers/configController\.php$ /parametre [R=301,L,NC]
+RewriteRule ^parametre$ /controllers/configController.php [L,NC]
 
-RewriteRule ^type1\.html$ /controllers/pokemonListController.php?name=1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^controllers/favourListController\.php$ /favoris [R=301,L,NC]
+RewriteRule ^favoris$ controllers/favourListController.php [L,NC]
 
-# Redirection de pokemon1.html vers /pokemon/detail.php avec un identifiant de pokemon spécifique
-# Supposons que "1" soit l'ID du pokemon
-RewriteRule ^pokemon1\.html$ /controllers/pokemonDetailController.php?id=1 [L,QSA]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} type=([a-zA-Z]+)
+RewriteRule ^controllers/pokemonListController\.php$ /type%1? [R=301,L,NC]
+RewriteRule ^type([a-zA-Z]+)$ /controllers/pokemonListController.php?type=$1 [L,QSA]
 
-# Redirection de favoris.html vers /favour/list.php
-RewriteRule ^favoris\.html$ /favour/list.php [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} id=([0-9]+)
+RewriteRule ^controllers/pokemonDetailController\.php$ /pokemon%1? [R=301,L,NC]
+RewriteRule ^pokemon([0-9]+)$ /controllers/pokemonDetailController.php?id=$1 [L,QSA]
