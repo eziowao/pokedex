@@ -16,6 +16,12 @@ try {
     $errors = $e->getMessage();
 }
 
+var_dump($pokemonDetail);
+if (!empty($pokemonDetail->apiEvolutions[0]->pokedexId)){
+    $idPreEvolution = $pokemonDetail->apiEvolutions[0]->pokedexId;
+    pokemonInformation($idPreEvolution);
+}
+// $idEvolution = $pokemonDetail->apiPreEvolution->pokedexIdd;
 
 // include __DIR__ . '/../views/templates/header.php';
 if (empty($errors)) {
