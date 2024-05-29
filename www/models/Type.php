@@ -5,7 +5,7 @@ require_once __DIR__ . './../config/config.php';
 function AllTypes()
 {
     // json pour les types
-    $json = @file_get_contents('https://pokebuilpi.fr/api/v1/types');
+    $json = @file_get_contents(POKEMON_TYPES);
     
     if ($json === false) {
         $types = false;
