@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-purple justify-content-center">
-            <a class="navbar-brand text-center" href="#"><img src="./../../public/assets/img/pokedex_logo.png" class="h-50 w-50" height="50px" alt="logo pokedex avec un ectoplasma"></a>
+            <a class="navbar-brand text-center" href="#"><img src="./../../public/assets/img/pokedex_logo.png" class="h-50 w-50" alt="logo pokedex avec un ectoplasma"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
