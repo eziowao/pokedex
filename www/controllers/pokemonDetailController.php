@@ -16,12 +16,17 @@ try {
     $errors = $e->getMessage();
 }
 
-var_dump($pokemonDetail);
-if (!empty($pokemonDetail->apiEvolutions[0]->pokedexId)){
-    $idPreEvolution = $pokemonDetail->apiEvolutions[0]->pokedexId;
-    pokemonInformation($idPreEvolution);
+// var_dump($pokemonDetail->apiPreEvolutions);
+if ($pokemonDetail->apiPreEvolution->pokedexIdd) {
+    $idPreEvolution = $pokemonDetail->apiPreEvolution->pokedexIdd;
+    $infoPreEvolution = pokemonInformation($idPreEvolution);
+    // var_dump($infoPreEvolution);
 }
-// $idEvolution = $pokemonDetail->apiPreEvolution->pokedexIdd;
+if (!empty($pokemonDetail->apiEvolutions[0]->pokedexId)){
+    $idEvolution = $pokemonDetail->apiEvolutions[0]->pokedexId;
+    $infoEvolution = pokemonInformation($idEvolution);
+    // var_dump($infoEvolution);
+}
 
 // include __DIR__ . '/../views/templates/header.php';
 if (empty($errors)) {
