@@ -6,7 +6,7 @@ function allPokemonsOfSameType($type)
     $linkApi = ONE_TYPE_POKEMONS . $type;
     $json = file_get_contents($linkApi);
     $data = json_decode($json);
-    return $data; //tableau d'objets
+    return $data; // tableau d'objets
 }
 
 function pokemonInformation($id)
@@ -14,5 +14,5 @@ function pokemonInformation($id)
     $linkApi = POKEMON_INFORMATION . $id;
     $json = file_get_contents($linkApi);
     $data = json_decode($json);
-    return $data; //objet
+    return $data; // objet
 }

@@ -12,6 +12,7 @@ try {
 
 include __DIR__ . './../views/templates/header.php';
 if (empty($error)) {
+    
     include __DIR__ . './../views/type/list.php';
 } else {
     include __DIR__ . './../404.php';

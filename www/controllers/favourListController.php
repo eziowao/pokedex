@@ -1,11 +1,29 @@
 <?php
 require_once __DIR__ . '/../models/Pokemon.php';
+require_once __DIR__ . '/../models/Type.php';
+
+$types = AllTypes();
+$favoritePokemons = [];
+
 
 if (array_key_exists('favorites', $_COOKIE)) {
-    $favoritePokemons = [];
     $favorites = json_decode($_COOKIE['favorites']);
     foreach ($favorites as $pokemonId) {
-        array_push($favoritePokemons, pokemonInformation($pokemonId));
+        $pokemon = pokemonInformation($pokemonId);
+        if ($pokemon) {
+            $pokemon->typeClass = 'type-normal'; // Valeur par défaut
+
+            if (isset($pokemon->apiTypes) && is_array($pokemon->apiTypes) && count($pokemon->apiTypes) > 0) {
+                $mainType = $pokemon->apiTypes[0]->name; // Suppose que le premier type est le principal
+                foreach ($types as $type) {
+                    if ($type->name === $mainType) {
+                        $pokemon->typeClass = 'type-' . strtolower($type->englishName);
+                        break;
+                    }
+                }
+            }
+            array_push($favoritePokemons, $pokemon);
+        }
     }
 }
 
