@@ -2,27 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex</title>
 </head>
 
 <body>
-    <div>
-        <?php if (isset($favoritePokemons)) {
-            foreach ($favoritePokemons as $pokemon) { ?>
-                <div id="pokemon<?= $pokemon->id ?>">
-                    <div><?= $pokemon->name ?></div>
-                    <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?>">En savoir plus</a>
-                    <button class="delete_from_favour" type="btn" data-id="<?= $pokemon->id ?>">Supprimer</button>
-                </div>
-            <?php
-            }
-        } else { ?>
-            <div>Vous n'avez encore rien ajouté à votre liste de favoris</div>
-        <?php } ?>
-    </div>
-    <script src="../../public/assets/js/script.js"></script>
+  <div>
+    <?php if (isset($favoritePokemons)) {
+      foreach ($favoritePokemons as $pokemon) { ?>
+        <div id="pokemon<?= $pokemon->id ?>">
+          <div><?= $pokemon->name ?></div>
+          <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?>">En savoir plus</a>
+          <button class="delete_from_favour" type="btn" data-page="favoris" data-id="<?= $pokemon->id ?>">Supprimer</button>
+        </div>
+      <?php
+      }
+    } else { ?>
+      <div>Vous n'avez encore rien ajouté à votre liste de favoris</div>
+    <?php } ?>
+  </div>
+  <script src="../../public/assets/js/script.js"></script>
 </body>
 
 </html>
