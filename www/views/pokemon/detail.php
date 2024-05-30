@@ -8,9 +8,48 @@
 </head>
 
 <body>
+
+    <?php
+    if ($pokemonDetail->apiPreEvolution != 'none' && !empty($pokemonDetail->apiPreEvolution)) {
+      if ($pokemonPreEvolution->apiPreEvolution != 'none' && !empty($pokemonPreEvolution->apiPreEvolution)) {?>
+        <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $firstPokemon ?> "><img src="<?=$firstImage?>" alt="1er Pokémon"></a></p>
+        <?php
+      }?>
+      <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $idPreEvolution ?> "><img src="<?=$infoPreEvolution?>" alt="Précédent Pokémon"></a></p>
+      <?php
+    }
+    ?>
+
+
     <p><?= $pokemonDetail->name ?></p>
     <img src="<?= $pokemonDetail->image ?>" alt="">
     <p>HP: <?= $pokemonDetail->stats->HP ?></p>
+
+    <p><img src="<?=$infoEvolution->image??''?>" alt=""></p>
+
+    <?php
+    if (count($pokemonDetail->apiEvolutions) > 1) {
+      foreach ($evolutions as $key => $evolution) {
+        $idPokemonEvolution = $evolution->pokedexId;
+        // Info Évolution
+        $pokemonEvolution = pokemonInformation($idPokemonEvolution);
+        // Récupération Image pokemon suivant
+        $infoImageEvolutions = checkPreEvolution($pokemonEvolution);?>
+        <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $idPokemonEvolution ?> "><img src="<?=$infoImageEvolutions?>" alt="Pokémon suivant"></a></p>
+        <?php
+      }
+    } elseif ($pokemonDetail->apiEvolutions != 'none' && !empty($pokemonDetail->apiEvolutions)) {?>
+      <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $idEvolutions ?> "><img src="<?=$infoEvolutions?>" alt="Pokémon suivant"></a></p>
+      <?php
+      if ($pokemonEvolutions->apiEvolutions != 'none' && !empty($pokemonEvolutions->apiEvolutions)) {?>
+      <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $lastPokemon ?> "><img src="<?=$lastImage?>" alt="2e Pokémon"></a></p>
+        <?php
+      }?>
+      <?php
+    }
+    ?>
+
+
     <!-- !!!! Exemple de contenu de variable $pokemonDetail
     {
  "id": 850,
