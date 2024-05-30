@@ -74,8 +74,10 @@ footer {
     background: none;
 }
 
-/* icon style  */
-
-#favDelete {
+.bi-star-fill {
     color: yellow;
+}
+
+.search_bar_result {
+    color: black !important;
 }

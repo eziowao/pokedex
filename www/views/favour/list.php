@@ -6,14 +6,14 @@
       <?php if (isset($favoritePokemons)) {
         foreach ($favoritePokemons as $pokemon) { ?>
 
-          <div class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
+          <div id="pokemon<?= $pokemon->id ?>" class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
             <div class="card-body">
               <div class="d-flex align-items-baseline ">
                 <div class="col-10">
                   <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
                 </div>
 
-                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"> <i onclick="Toggle()" id="favDelete" class="delete_from_favour fa-regular bi bi-star-fill" data-page="list" data-id="<?= $pokemon->id ?>"></i>
+                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"> <i id="favDelete" class="delete_from_favour bi bi-star-fill" data-page="favoris" data-id="<?= $pokemon->id ?>"></i>
                 </button>
 
               </div>

@@ -1,8 +1,8 @@
-  <div class="bg-purple pb-3">
+  <div class="my-3">
     <form class="row align-items-center justify-content-center">
       <div class="col-10 col-lg-5">
         <input type="text" id="searchInput" class="form-control rounded-5 my-1" placeholder="Rechercher">
-        <div id="searchResults" class="rounded-2 text-decoration-none text-light text-center"></div>
+        <div id="searchResults" class="rounded-2 text-decoration-none text-center"></div>
       </div>
     </form>
   </div>
@@ -19,7 +19,7 @@
                 <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
               </div>
               <div class="col-2 d-flex justify-content-end">
-                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="add_in_favour fa-regular fa-star fa-lg" data-page="list" data-id="<?= $pokemon->id ?>"></i> </button>
+                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="add_in_favour bi bi-star" data-page="list" data-id="<?= $pokemon->id ?>"></i> </button>
               </div>
 
             </div>
@@ -36,6 +36,8 @@
 
     </div>
   </div>
+  <script src="../../public/assets/js/search.js"></script>
+
 
   <!-- !!!! Exemple de contenu de variable $pokemon
     {
@@ -82,8 +84,6 @@
     "apiPreEvolution": "none",
     "apiResistancesWithAbilities": []
   } -->
-  <script src="../../public/assets/js/search.js"></script>
-  <script src="../../public/assets/js/script.js"></script>
   <script src="../../public/assets/js/search.js"></script>
   </body>
 

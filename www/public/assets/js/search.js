@@ -36,7 +36,7 @@ const getResults = (e) => {
           // Générer le HTML des résultats
           let resultsHTML = results
             .map(function (result) {
-              return `<div><a class="text-light text-decoration-none" href="controllers/pokemonDetailController.php?id=${result.id}">${result.name}</a></div>`;
+              return `<div><a class="search_bar_result text-decoration-none" href="controllers/pokemonDetailController.php?id=${result.id}">${result.name}</a></div>`;
             })
             .join("");
           searchResults.innerHTML = resultsHTML;

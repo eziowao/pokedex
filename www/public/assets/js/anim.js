@@ -1,9 +1,10 @@
-function Toggle() {
-    const favDelete = document.getElementById('favDelete');
+// function Toggle() {
+//     const favDelete = document.getElementById('favDelete');
 
-    if (favDelete.style.color === 'yellow') {
-        favDelete.style.color = 'grey';
-    } else {
-        favDelete.style.color = 'yellow';
-    }
-}
+//     if (favDelete.classList.contains('bi-star-fill')) {
+//         favDelete.classList.remove('bi-star-fill');
+//         favDelete.classList.add('bi-star');
+//     }
+// }
+
+
