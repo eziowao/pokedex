@@ -46,9 +46,9 @@ const getResults = (e) => {
       //// Envoyer la requête POST avec les données de recherche et le type de Pokémon (xhr.open)
       xhr.send(
         "query=" +
-        encodeURIComponent(searchText) +
-        "&type=" +
-        encodeURIComponent(type)
+          encodeURIComponent(searchText) +
+          "&type=" +
+          encodeURIComponent(type)
       );
     }
   }, 300); // 300ms delay
@@ -61,3 +61,10 @@ const removeAccent = (str) => {
 };
 
 searchInput.addEventListener("input", getResults);
+
+window.addEventListener("mouseup", function (event) {
+  if (!event.target.closest("#searchResults")) {
+    searchResults.innerHTML = "";
+    searchInput.value = "";
+  }
+});

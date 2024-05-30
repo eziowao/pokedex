@@ -1,3 +1,4 @@
+</main>
 <footer class="bg-custom text-white mt-5">
     
         <div class="container py-4">
