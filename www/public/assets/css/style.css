@@ -13,7 +13,7 @@
 }
 
 h1 {
-    font-family: 'Pokemon dark';
+    font-family: 'Pokemon light';
 }
 
 body {
@@ -29,7 +29,7 @@ body {
 /* search bar  */
 
 .form-control:hover {
-    box-shadow: 0px 0px 6px -2px white;
+    box-shadow: 0px 0px 10px -2px white;
 }
 
 .form-control:focus {
@@ -174,3 +174,19 @@ footer{
 
 
 
+/* page pokemon list controller  */
+
+.type-normal {
+    background: none;
+    background-image: url('../img/cards_normal.png');
+}
+
+.btn-fav {
+    background: none;
+}
+
+/* icon style  */
+
+#favDelete {
+    color: yellow;
+}

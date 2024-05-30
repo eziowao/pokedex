@@ -1,19 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+  <div class="bg-purple pb-3">
+    <form class="row align-items-center justify-content-center">
+      <div class="col-10 col-lg-5">
+        <input type="text" id="searchInput" class="form-control rounded-5 my-1" placeholder="Rechercher">
+        <div id="searchResults" class="rounded-2 text-decoration-none text-light text-center"></div>
+      </div>
+    </form>
+  </div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokedex</title>
-</head>
+  <div class="container">
+    <div class="row justify-content-center">
+      <h1 id="<?= $typeName ?>" class="text-center my-5"> <?= $typeName ?> </h1>
 
-<body>
-  <?php foreach ($listOfPokemons as $pokemon) : ?>
-    <li><?= $pokemon->name; ?></li>
-    <img src="<?= $pokemon->image ?>" alt="">
-    <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?> ">Clic</a>
-    <button id="add_in_favour" type="btn" data-id="<?= $pokemon->id ?>">Ajouter aux favoris</button>
-  <?php endforeach ?>
+      <?php foreach ($listOfPokemons as $pokemon) : ?>
+        <div class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
+          <div class="card-body">
+            <div class="d-flex align-items-baseline ">
+              <div class="col-10">
+                <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
+              </div>
+              <div class="col-2 d-flex justify-content-end">
+                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="add_in_favour fa-regular fa-star fa-lg" data-page="list" data-id="<?= $pokemon->id ?>"></i> </button>
+              </div>
+
+            </div>
+            <p> #0<?= $pokemon->pokedexId; ?></p>
+            <div class="d-flex justify-content-center pt-4">
+              <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?> ">
+                <img src="<?= $pokemon->image ?>" height="150px" alt="">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      <?php endforeach ?>
+
+    </div>
+  </div>
+
   <!-- !!!! Exemple de contenu de variable $pokemon
     {
     "id": 7,
@@ -59,7 +82,9 @@
     "apiPreEvolution": "none",
     "apiResistancesWithAbilities": []
   } -->
+  <script src="../../public/assets/js/search.js"></script>
   <script src="../../public/assets/js/script.js"></script>
-</body>
+  <script src="../../public/assets/js/search.js"></script>
+  </body>
 
-</html>
+  </html>

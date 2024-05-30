@@ -1,8 +1,30 @@
-const btnFavour = document.querySelectorAll("#add_in_favour");
+const btnAddFavour = document.querySelectorAll(".add_in_favour");
+const btnDeleteFavour = document.querySelectorAll(".delete_from_favour");
 
 const getId = (event) => {
   const id = event.target.dataset.id;
-  addPokemonToFavoritesCookies(id);
+  const page = event.target.dataset.page;
+  if (event.target.classList.contains("delete_from_favour")) {
+    deletePokemonFromFavoritesCookies(id, page);
+  } else {
+    addPokemonToFavoritesCookies(id);
+  }
+};
+
+const deletePokemonFromFavoritesCookies = (pokemonId, page) => {
+  let favorites = getFavoritesFromCookies();
+  if (favorites.includes(pokemonId)) {
+    favorites = favorites.filter((favoriteId) => favoriteId !== pokemonId);
+  }
+
+  setFavoritesInCookies(favorites);
+  if (page == "list") {
+    btnAddFavour.classList.toggle = "bi-star";
+    btnAddFavour.classList.toggle = "bi-star-fill";
+  } else if (page == "favoris") {
+    const pokemonDiv = document.querySelector("#pokemon" + pokemonId);
+    pokemonDiv.remove();
+  }
 };
 
 const addPokemonToFavoritesCookies = (pokemonId) => {
@@ -10,13 +32,15 @@ const addPokemonToFavoritesCookies = (pokemonId) => {
   if (!favorites.includes(pokemonId)) {
     favorites.push(pokemonId);
   }
+  setFavoritesInCookies(favorites);
+};
+
+const setFavoritesInCookies = (data) => {
   document.cookie =
     "favorites=" +
-    JSON.stringify(favorites) +
+    JSON.stringify(data) +
     "; path=/; max-age=" +
     60 * 60 * 24 * 30; // 30 jours
-
-  document.cookie = "likes=" + "34" + "; path=/; max-age=" + 60 * 60 * 24 * 30; // 30 jours
 };
 
 const getFavoritesFromCookies = () => {
@@ -24,6 +48,10 @@ const getFavoritesFromCookies = () => {
   return matches ? JSON.parse(decodeURIComponent(matches[1])) : [];
 };
 
-btnFavour.forEach((button) => {
+btnAddFavour.forEach((button) => {
+  button.addEventListener("click", getId);
+});
+
+btnDeleteFavour.forEach((button) => {
   button.addEventListener("click", getId);
 });
