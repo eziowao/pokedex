@@ -62,6 +62,6 @@ btnAddFavour.forEach((button) => {
   button.addEventListener("click", getId);
 });
 
-btnDeleteFavour.forEach((button) => {
-  button.addEventListener("click", getId);
-});
+//btnDeleteFavour.forEach((button) => {
+//  button.addEventListener("click", getId);
+//});
