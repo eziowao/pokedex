@@ -70,6 +70,8 @@ footer {
     background-image: url('../img/cards_normal.png');
 }
 
+/* fav icons  */
+
 .btn-fav {
     background: none;
 }
@@ -78,6 +80,25 @@ footer {
     color: yellow;
 }
 
+/* search bar result */
+
 .search_bar_result {
     color: black !important;
+}
+
+.form-control {
+    position: relative;
+}
+
+/* .form-control-container {
+    position: relative;
+} */
+
+#searchResults {
+    position: relative;
+    z-index: 2;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px -2px grey;
+    /* width: 40%;
+    left: 30%; */
 }

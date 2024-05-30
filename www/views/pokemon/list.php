@@ -1,10 +1,22 @@
   <div class="my-3">
     <form class="row align-items-center justify-content-center">
-      <div class="col-10 col-lg-5">
+      <div class="col-10 col-md-8 col-lg-5">
         <input type="text" id="searchInput" class="form-control rounded-5 my-1" placeholder="Rechercher">
         <div id="searchResults" class="rounded-2 text-decoration-none text-center"></div>
       </div>
     </form>
+    <!-- <form>
+      <div class="col-10 col-lg-5">
+        <div>
+          <div>
+            <input type="text" id="searchInput" class="form-control rounded-5 my-1" placeholder="Rechercher">
+          </div>
+        </div>
+        <div>
+          <div id="searchResults" class="rounded-2 text-decoration-none text-center"></div>
+        </div>
+      </div>
+    </form> -->
   </div>
 
   <div class="container">
