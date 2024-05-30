@@ -1,7 +1,7 @@
   <div class="my-3">
-    <form class="row align-items-center justify-content-center">
-      <div class="col-10 col-md-8 col-lg-5">
-        <input type="text" id="searchInput" class="form-control rounded-5 my-1" placeholder="Rechercher">
+    <form class="row align-items-center justify-content-center m-0">
+      <div class="col-10 col-md-8 col-lg-5 position-relative p-0">
+        <input type="text" id="searchInput" class="w-100 form-control rounded-2 my-1" placeholder="Rechercher">
         <div id="searchResults" class="rounded-2 text-decoration-none text-center"></div>
       </div>
     </form>
@@ -34,9 +34,9 @@
                 <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>">
                   <?php if (isset($_COOKIE['favorites'])) {
                     if (!in_array($pokemon->id, $favorites)) { ?>
-                      <i class="add_in_favour bi bi-star" data-page="list" data-id="<?= $pokemon->id ?>"></i>
+                      <i class="add_in_favour bi bi-star text-white" data-page="list" data-id="<?= $pokemon->id ?>"></i>
                     <?php } else { ?>
-                      <i class="delete_from_favour bi bi-star-fill" data-page="list" data-id="<?= $pokemon->id ?>"></i>
+                      <i class="delete_from_favour bi bi-star-fill text-white" data-page="list" data-id="<?= $pokemon->id ?>"></i>
                   <?php }
                   } ?>
                 </button>

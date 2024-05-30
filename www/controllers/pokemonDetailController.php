@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../models/Pokemon.php';
 require_once __DIR__ . './../models/Type.php';
 
+$favorites = json_decode($_COOKIE['favorites']);
 
 try {
     $allTypes = AllTypes();
@@ -30,7 +31,8 @@ try {
 }
 
 
-function getTypeImage($typeName, $typeImages) {
+function getTypeImage($typeName, $typeImages)
+{
     return isset($typeImages[$typeName]) ? $typeImages[$typeName]['image'] : '';
 }
 
