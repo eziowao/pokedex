@@ -8,6 +8,7 @@
   </div>
 
   <div class="container">
+    <a href="./../../controllers/typeListController.php" class="btn btn-primary">retour aux types</a>
     <div class="row justify-content-center">
       <h1 id="<?= $typeName ?>" class="text-center my-5"> <?= $typeName ?> </h1>
 
