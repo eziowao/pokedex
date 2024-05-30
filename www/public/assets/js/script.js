@@ -1,29 +1,30 @@
 const btnAddFavour = document.querySelectorAll(".add_in_favour");
 const btnDeleteFavour = document.querySelectorAll(".delete_from_favour");
-const searchInput = document.querySelector("#searchInput");
-const searchResults = document.querySelector("#searchResults");
-const header = document.querySelector("h1");
 
 const getId = (event) => {
   const id = event.target.dataset.id;
-
+  const page = event.target.dataset.page;
   if (event.target.classList.contains("delete_from_favour")) {
-    deletePokemonFromFavoritesCookies(id);
+    deletePokemonFromFavoritesCookies(id, page);
   } else {
     addPokemonToFavoritesCookies(id);
   }
 };
 
-const deletePokemonFromFavoritesCookies = (pokemonId) => {
+const deletePokemonFromFavoritesCookies = (pokemonId, page) => {
   let favorites = getFavoritesFromCookies();
   if (favorites.includes(pokemonId)) {
     favorites = favorites.filter((favoriteId) => favoriteId !== pokemonId);
   }
 
   setFavoritesInCookies(favorites);
-
-  const pokemonDiv = document.querySelector("#pokemon" + pokemonId);
-  pokemonDiv.remove();
+  if (page == "list") {
+    btnAddFavour.classList.toggle = "bi-star";
+    btnAddFavour.classList.toggle = "bi-star-fill";
+  } else if (page == "favoris") {
+    const pokemonDiv = document.querySelector("#pokemon" + pokemonId);
+    pokemonDiv.remove();
+  }
 };
 
 const addPokemonToFavoritesCookies = (pokemonId) => {
@@ -47,38 +48,6 @@ const getFavoritesFromCookies = () => {
   return matches ? JSON.parse(decodeURIComponent(matches[1])) : [];
 };
 
-const type = header.getAttribute("id");
-
-const getResults = (e) => {
-  let searchText = e.target.value;
-  if (searchText.trim() === "") {
-    searchResults.innerHTML = "";
-  } else {
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/controllers/searchController.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        var results = JSON.parse(xhr.responseText);
-        var resultsHTML = results
-          .map(function (result) {
-            return "<div>" + "<h3>" + result.name + "</h3>" + "<p>";
-          })
-          .join("");
-        searchResults.innerHTML = resultsHTML;
-      }
-    };
-
-    xhr.send(
-      "query=" +
-        encodeURIComponent(searchText) +
-        "&type=" +
-        encodeURIComponent(type)
-    );
-  }
-};
-
 btnAddFavour.forEach((button) => {
   button.addEventListener("click", getId);
 });
@@ -86,5 +55,3 @@ btnAddFavour.forEach((button) => {
 btnDeleteFavour.forEach((button) => {
   button.addEventListener("click", getId);
 });
-
-searchInput.addEventListener("input", getResults);

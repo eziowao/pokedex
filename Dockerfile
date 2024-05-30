@@ -1,5 +1,5 @@
 FROM php:8.3-apache
-
+RUN a2enmod rewrite
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
 COPY ./www/.htaccess /var/www/html/

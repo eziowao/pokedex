@@ -1,31 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<main>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
-</head>
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <h1 class="text-center">Vos favoris</h1>
+      <?php if (isset($favoritePokemons)) {
+        foreach ($favoritePokemons as $pokemon) { ?>
 
-<body>
-    <div>
-        <?php if (isset($favoritePokemons)) {
-            foreach ($favoritePokemons as $pokemon) { ?>
-                <div id="pokemon<?= $pokemon->id ?>">
-                    <div><?= $pokemon->name ?></div>
-                    <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?>">En savoir plus</a>
-                    <button class="delete_from_favour" type="btn" data-id="<?= $pokemon->id ?>">Supprimer</button>
+          <div class="<?= $pokemon->typeClass ?> text-light card m-3 border-0" style="width: 286px; height: 334px">
+            <div class="card-body">
+              <div class="d-flex align-items-baseline ">
+                <div class="col-10">
+                  <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
                 </div>
-            <?php
-            }
-        } else { ?>
-            <div>Vous n'avez encore rien ajouté à votre liste de favoris</div>
-        <?php } ?>
-    </div>
-    <script src="../../public/assets/js/script.js"></script>
-</body>
 
-</html>
+                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"> <i onclick="Toggle()" id="favDelete" class="delete_from_favour fa-regular bi bi-star-fill" data-page="list" data-id="<?= $pokemon->id ?>"></i>
+                </button>
+
+              </div>
+              <p> #0<?= $pokemon->pokedexId; ?></p>
+              <div class="d-flex justify-content-center pt-4">
+                <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?> ">
+                  <img src="<?= $pokemon->image ?>" height="150px" alt="">
+                </a>
+              </div>
+              <a href="<?= '/controllers/pokemonDetailController.php?id=' . $pokemon->id ?>" class="text-decoration-none text-light">En savoir plus</a>
+            </div>
+          </div>
+        <?php
+        }
+      } else { ?>
+        <div>Vous n'avez encore rien ajouté à votre liste de favoris</div>
+      <?php } ?>
+    </div>
+  </div>
+</main>
 
 <!-- !!!! Exemple de contenu de variable $pokemon
     {
