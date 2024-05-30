@@ -20,3 +20,15 @@ function pokemonInformation($id)
     $data = json_decode($json);
     return $data; // objet
 }
+
+function getPicture($pokemon)
+{
+    $spritePokemon = $pokemon->sprite;
+    return $spritePokemon;
+}
+
+function checkPreEvolution($id)
+{
+    $pokemonPicture = getPicture($id);
+    return $pokemonPicture;
+}
