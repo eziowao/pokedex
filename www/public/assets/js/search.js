@@ -26,7 +26,7 @@ const getResults = (e) => {
           let results = JSON.parse(xhr.responseText);
           let resultsHTML = results
             .map(function (result) {
-              return `<div><a href="controllers/pokemonDetailController.php?id=${result.id}">${result.name}</a></div>`;
+              return `<div><a class="text-light text-decoration-none" href="controllers/pokemonDetailController.php?id=${result.id}">${result.name}</a></div>`;
             })
             .join("");
           searchResults.innerHTML = resultsHTML;
@@ -35,9 +35,9 @@ const getResults = (e) => {
 
       xhr.send(
         "query=" +
-          encodeURIComponent(searchText) +
-          "&type=" +
-          encodeURIComponent(type)
+        encodeURIComponent(searchText) +
+        "&type=" +
+        encodeURIComponent(type)
       );
     }
   }, 300); // 300ms delay

@@ -13,7 +13,8 @@
                   <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
                 </div>
 
-                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="delete_from_favour fa-regular bi bi-star-fill" data-page="list" data-id="<?= $pokemon->id ?>"></i> </button>
+                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"> <i onclick="Toggle()" id="favDelete" class="delete_from_favour fa-regular bi bi-star-fill" data-page="list" data-id="<?= $pokemon->id ?>"></i>
+                </button>
 
               </div>
               <p> #0<?= $pokemon->pokedexId; ?></p>

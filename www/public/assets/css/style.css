@@ -76,6 +76,6 @@ footer {
 
 /* icon style  */
 
-i {
-    color: white;
+#favDelete {
+    color: yellow;
 }
