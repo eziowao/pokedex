@@ -1,5 +1,6 @@
+// Sélectionner les éléments du DOM
 const btnAddFavour = document.querySelectorAll(".add_in_favour");
-const btnDeleteFavour = document.querySelectorAll(".delete_from_favour");
+//const btnDeleteFavour = document.querySelectorAll(".delete_from_favour");
 
 const getId = (event) => {
   const id = event.target.dataset.id;
@@ -17,14 +18,17 @@ const deletePokemonFromFavoritesCookies = (pokemonId, page) => {
     favorites = favorites.filter((favoriteId) => favoriteId !== pokemonId);
   }
 
-  setFavoritesInCookies(favorites);
   if (page == "list") {
     btnAddFavour.classList.toggle = "bi-star";
     btnAddFavour.classList.toggle = "bi-star-fill";
+    btnAddFavour.classList.toggle = "add_from_favour";
+    btnAddFavour.classList.toggle = "delete_from_favour";
   } else if (page == "favoris") {
     const pokemonDiv = document.querySelector("#pokemon" + pokemonId);
     pokemonDiv.remove();
   }
+
+  setFavoritesInCookies(favorites);
 };
 
 const addPokemonToFavoritesCookies = (pokemonId) => {
@@ -32,6 +36,12 @@ const addPokemonToFavoritesCookies = (pokemonId) => {
   if (!favorites.includes(pokemonId)) {
     favorites.push(pokemonId);
   }
+
+  btnAddFavour.classList.toggle = "bi-star";
+  btnAddFavour.classList.toggle = "bi-star-fill";
+  btnAddFavour.classList.toggle = "add_from_favour";
+  btnAddFavour.classList.toggle = "delete_from_favour";
+
   setFavoritesInCookies(favorites);
 };
 

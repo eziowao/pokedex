@@ -2,19 +2,21 @@
 require_once __DIR__ . '/../models/Pokemon.php';
 
 header('Content-Type: application/json');
-$input = file_get_contents('php://input');
-$data = json_decode($input, true);
 
+// Récupérer les données POST
 $searchText = isset($_POST['query']) ? $_POST['query'] : '';
 $type = isset($_POST['type']) ? $_POST['type'] : '';
 
+// Récupérer tous les Pokémons du type spécifié
 $listOfPokemons = allPokemonsOfSameType($type);
 
+// Si aucun texte de recherche n'est fourni, retourner un tableau vide
 if ($searchText === '') {
     echo json_encode([]);
     exit();
 }
 
+//fonction pour supprimer les accents des lettres
 function normalize($string)
 {
     $table = array(
@@ -31,9 +33,11 @@ function normalize($string)
     return strtr($string, $table);
 }
 
+// Filtrer les Pokémons par le texte de recherche
 $results = array_filter($listOfPokemons, function ($pokemon) use ($searchText) {
     $pattern = '/\b' . preg_quote(strtolower($searchText), '/') . '/';
     return preg_match($pattern, normalize(strtolower($pokemon->name)));
 });
 
+// Retourner les résultats en JSON
 echo json_encode(array_values($results));
