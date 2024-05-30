@@ -6,8 +6,6 @@ const getId = (event) => {
   const id = event.target.dataset.id;
   const page = event.target.dataset.page;
   const btn = event.target;
-  console.log(btn);
-  console.log(page);
   if (event.target.classList.contains("delete_from_favour")) {
     deletePokemonFromFavoritesCookies(id, page, btn);
   } else {
@@ -39,7 +37,6 @@ const addPokemonToFavoritesCookies = (pokemonId, btn) => {
   if (!favorites.includes(pokemonId)) {
     favorites.push(pokemonId);
   }
-  console.log(btn);
 
   btn.classList.toggle("bi-star");
   btn.classList.toggle("bi-star-fill");
@@ -51,10 +48,7 @@ const addPokemonToFavoritesCookies = (pokemonId, btn) => {
 
 const setFavoritesInCookies = (data) => {
   document.cookie =
-    "favorites=" +
-    JSON.stringify(data) +
-    "; path=/; max-age=" +
-    60 * 60 * 24 * 30; // 30 jours
+    "favorites=" + JSON.stringify(data) + "; path=/; max-age=31536000";
 };
 
 const getFavoritesFromCookies = () => {
