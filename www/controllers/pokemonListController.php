@@ -5,6 +5,8 @@ require_once __DIR__ . '/../models/Type.php';
 $types = AllTypes();
 $typeName = null;
 
+$favorites = json_decode($_COOKIE['favorites']);
+
 try {
     if (array_key_exists('type', $_GET) && $_GET['type'] != null) {
         $typeId = $_GET['type'];

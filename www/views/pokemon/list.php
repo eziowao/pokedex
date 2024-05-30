@@ -19,7 +19,15 @@
                 <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
               </div>
               <div class="col-2 d-flex justify-content-end">
-                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="add_in_favour bi bi-star" data-page="list" data-id="<?= $pokemon->id ?>"></i> </button>
+                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>">
+                  <?php if (isset($_COOKIE['favorites'])) {
+                    if (!in_array($pokemon->id, $favorites)) { ?>
+                      <i class="add_in_favour bi bi-star" data-page="list" data-id="<?= $pokemon->id ?>"></i>
+                    <?php } else { ?>
+                      <i class="delete_from_favour bi bi-star-fill" data-page="list" data-id="<?= $pokemon->id ?>"></i>
+                  <?php }
+                  } ?>
+                </button>
               </div>
 
             </div>
