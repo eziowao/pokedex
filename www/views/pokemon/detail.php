@@ -37,6 +37,7 @@
                 <h3>Arbre d'évolution</h3>
             </div>
             <div class="pokemon-types me-5">
+            <div class="resistance-section bg-light">
                 <h3>Types :</h3>
                 <?php foreach ($pokemonDetail->apiTypes as $type): ?>
                     <div class="d-inline-block text-center mr-2">
@@ -44,6 +45,7 @@
                         <h3><?= $type->name ?></h3>
                     </div>
                 <?php endforeach; ?>
+              </div>
             </div>
         </div>
   <div class="container mt-5">
