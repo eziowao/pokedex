@@ -1,7 +1,8 @@
   <div class="bg-purple pb-3">
     <form class="row align-items-center justify-content-center">
       <div class="col-10 col-lg-5">
-        <input class="form-control rounded-5 my-1" type="search" placeholder="Bulbizarre ou #001" aria-label="Rechercher">
+        <input type="text" id="searchInput" class="form-control rounded-5 my-1" placeholder="Rechercher">
+        <div id="searchResults" class="rounded-2 text-decoration-none text-light text-center"></div>
       </div>
     </form>
   </div>
@@ -81,6 +82,7 @@
     "apiPreEvolution": "none",
     "apiResistancesWithAbilities": []
   } -->
+  <script src="../../public/assets/js/search.js"></script>
   <script src="../../public/assets/js/script.js"></script>
   <script src="../../public/assets/js/search.js"></script>
   </body>
