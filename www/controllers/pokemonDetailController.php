@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../models/Pokemon.php';
-require_once __DIR__ . './../models/Type.php';
+require_once __DIR__ . '/../models/Type.php';
 
 
 try {
