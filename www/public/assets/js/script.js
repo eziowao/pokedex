@@ -6,6 +6,7 @@ const header = document.querySelector("h1");
 
 const getId = (event) => {
   const id = event.target.dataset.id;
+  console.log(id);
 
   if (event.target.classList.contains("delete_from_favour")) {
     deletePokemonFromFavoritesCookies(id);
@@ -72,9 +73,9 @@ const getResults = (e) => {
 
     xhr.send(
       "query=" +
-        encodeURIComponent(searchText) +
-        "&type=" +
-        encodeURIComponent(type)
+      encodeURIComponent(searchText) +
+      "&type=" +
+      encodeURIComponent(type)
     );
   }
 };

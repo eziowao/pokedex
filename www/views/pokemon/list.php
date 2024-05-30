@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokedex</title>
-</head>
-
-<body>
-
   <div class="bg-purple pb-3">
     <form class="row align-items-center justify-content-center">
       <div class="col-10 col-lg-5">
@@ -19,7 +8,7 @@
 
   <div class="container">
     <div class="row justify-content-center">
-      <h1 id="<?= $type ?>" class="text-center my-5"> <?= $type ?> </h1>
+      <h1 id="<?= $typeName ?>" class="text-center my-5"> <?= $typeName ?> </h1>
 
       <?php foreach ($listOfPokemons as $pokemon) : ?>
         <div class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
@@ -29,7 +18,7 @@
                 <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
               </div>
               <div class="col-2 d-flex justify-content-end">
-                <button id="add_in_favour" class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="fa-regular fa-star fa-lg"></i> </button>
+                <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"><i class="add_in_favour fa-regular fa-star fa-lg" data-page="list" data-id="<?= $pokemon->id ?>"></i> </button>
               </div>
 
             </div>
@@ -93,6 +82,7 @@
     "apiResistancesWithAbilities": []
   } -->
   <script src="../../public/assets/js/script.js"></script>
-</body>
+  <script src="../../public/assets/js/search.js"></script>
+  </body>
 
-</html>
+  </html>

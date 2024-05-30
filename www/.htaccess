@@ -22,3 +22,4 @@ RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{QUERY_STRING} id=([0-9]+)
 RewriteRule ^controllers/pokemonDetailController\.php$ /pokemon%1? [R=301,L,NC]
 RewriteRule ^pokemon([0-9]+)$ /controllers/pokemonDetailController.php?id=$1 [L,QSA]
+

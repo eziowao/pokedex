@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../../public/assets/css/style.css">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/8049f56234.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
     <title>Accueil</title>
 </head>
 
@@ -20,10 +22,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-around w-100 d-flex">
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-4" href="#">Accueil <i class="fa-solid fa-house ms-4"></i></a>
+                        <a class="nav-link fs-4" href="http://localhost:8098/">Accueil <i class="fa-solid fa-house ms-4"></i></a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-4" href="#">Favoris <i class="fa-solid fa-star ms-4"></i></a>
+                        <a class="nav-link fs-4" href="http://localhost:8098/favoris">Favoris <i class="fa-solid fa-star ms-4"></i></a>
                     </li>
                     <li class="nav-item text-center">
                         <a class="nav-link fs-4" href="#">Paramètres <i class="fa-solid fa-cog ms-4"></i></a>

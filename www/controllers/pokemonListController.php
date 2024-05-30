@@ -26,10 +26,10 @@ try {
 }
 
 
-// include __DIR__ . '/../views/templates/header.php';
+include __DIR__ . '/../views/templates/header.php';
 if (empty($errors)) {
     include __DIR__ . '/../views/pokemon/list.php';
 } else {
     include __DIR__ . '/../404.php';
 }
-// include __DIR__ . '/../views/templates/footer.php';
+include __DIR__ . '/../views/templates/footer.php';
