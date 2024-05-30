@@ -10,7 +10,7 @@
 
 <body>
 <div class="container mt-4">
-<div class="pokemon-name <?= implode(' ', $typeClasses) ?> d-flex flex-column align-items-center py-3">
+<div class="pokemon-name <?= implode(' ', $typeClasses) ?> <?= in_array('bg-dark', $typeClasses) ? 'text-white' : '' ?> d-flex flex-column align-items-center py-3">
             <div class="d-flex align-items-center">
                 <img src="<?= $pokemonDetail->sprite ?>" alt="sprite du pokemon">
                 <h2 class="ms-5"><?= $pokemonDetail->name ?></h2>
@@ -35,6 +35,7 @@
             </div>
             <div>
                 <h3>Arbre d'évolution</h3>
+                <div class="evolution-tree d-flex">
                 <?php
                 if ($pokemonDetail->apiPreEvolution != 'none' && !empty($pokemonDetail->apiPreEvolution)) {
                   if ($pokemonPreEvolution->apiPreEvolution != 'none' && !empty($pokemonPreEvolution->apiPreEvolution)) {?>
@@ -67,6 +68,7 @@
                   <?php
                 }
                 ?>
+                </div>
             </div>
             <div class="pokemon-types me-5">
             <div class="resistance-section bg-light">
