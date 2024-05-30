@@ -351,3 +351,8 @@ footer {
   /* width: 40%;
     left: 30%; */
 }
+
+main.dark-mode {
+  background-color: black;
+  color: white;
+}
