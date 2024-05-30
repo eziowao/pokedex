@@ -178,7 +178,92 @@ footer{
 
 .type-normal {
     background: none;
-    background-image: url('../img/cards_normal.png');
+    background-image: url('../img/cards/cards_normal.png');
+}
+
+.type-fighting {
+    background: none;
+    background-image: url('../img/cards/cards-fighting.png');
+}
+
+.type-flying {
+    background: none;
+    background-image: url('../img/cards/cards-flying.png');
+}
+
+.type-poison {
+    background: none;
+    background-image: url('../img/cards/cards-poison.png');
+}
+
+.type-ground {
+    background: none;
+    background-image: url('../img/cards/cards-ground.png');
+}
+
+.type-rock {
+    background: none;
+    background-image: url('../img/cards/cards-rock.png');
+}
+
+.type-bug {
+    background: none;
+    background-image: url('../img/cards/cards-bug.png');
+}
+
+.type-ghost {
+    background: none;
+    background-image: url('../img/cards/cards-ghost.png');
+}
+
+.type-steel {
+    background: none;
+    background-image: url('../img/cards/cards-steel.png');
+}
+
+.type-fire {
+    background: none;
+    background-image: url('../img/cards/cards-fire.png');
+}
+
+.type-water {
+    background: none;
+    background-image: url('../img/cards/cards-water.png');
+}
+
+.type-grass {
+    background: none;
+    background-image: url('../img/cards/cards-grass.png');
+}
+
+.type-electric {
+    background: none;
+    background-image: url('../img/cards/cards-electric.png');
+}
+
+.type-psychic {
+    background: none;
+    background-image: url('../img/cards/cards-psychic.png');
+}
+
+.type-ice {
+    background: none;
+    background-image: url('../img/cards/cards-ice.png');
+}
+
+.type-dragon {
+    background: none;
+    background-image: url('../img/cards/cards-dragon.png');
+}
+
+.type-dark {
+    background: none;
+    background-image: url('../img/cards/cards-dark.png');
+}
+
+.type-fairy {
+    background: none;
+    background-image: url('../img/cards/cards-fairy.png');
 }
 
 .btn-fav {

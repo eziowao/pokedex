@@ -12,7 +12,7 @@
       <h1 id="<?= $typeName ?>" class="text-center my-5"> <?= $typeName ?> </h1>
 
       <?php foreach ($listOfPokemons as $pokemon) : ?>
-        <div class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
+        <div class="type-<?= $typeClass ?> text-light card m-3 border-0" style="width: 286px; height: 334px">
           <div class="card-body">
             <div class="d-flex align-items-baseline ">
               <div class="col-10">

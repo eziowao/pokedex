@@ -6,7 +6,7 @@
       <?php if (isset($favoritePokemons)) {
         foreach ($favoritePokemons as $pokemon) { ?>
 
-          <div class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
+          <div class="<?= $pokemon->typeClass ?> text-light card m-3 border-0" style="width: 286px; height: 334px">
             <div class="card-body">
               <div class="d-flex align-items-baseline ">
                 <div class="col-10">

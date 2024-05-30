@@ -4,6 +4,7 @@ require_once __DIR__ . '/../models/Type.php';
 
 $types = AllTypes();
 $typeName = null;
+$typeClass = null;
 
 try {
     if (array_key_exists('type', $_GET) && $_GET['type'] != null) {
@@ -11,6 +12,7 @@ try {
         foreach ($types as $type) {
             if ($type->id == $typeId) {
                 $typeName = $type->name;
+                $typeClass = strtolower($type->englishName);
             }
         }
         if (allPokemonsOfSameType($typeName)) {
