@@ -46,6 +46,7 @@ const addPokemonToFavoritesCookies = (pokemonId, btn) => {
   setFavoritesInCookies(favorites);
 };
 
+//https://fr.javascript.info/cookie
 const setFavoritesInCookies = (data) => {
   document.cookie =
     "favorites=" + JSON.stringify(data) + "; path=/; max-age=31536000";
