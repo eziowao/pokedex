@@ -2,6 +2,27 @@
 const btnAddFavour = document.querySelectorAll(".add_in_favour");
 const btnDeleteFavour = document.querySelectorAll(".delete_from_favour");
 
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTop = document.getElementById("back-to-top");
+
+  // Afficher/masquer le bouton lors du défilement de la page
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backToTop.classList.add("d-block");
+      backToTop.classList.remove("d-none");
+    } else {
+      backToTop.classList.remove("d-block");
+      backToTop.classList.add("d-none");
+    }
+  });
+
+  // Défilement fluide lorsque l'utilisateur clique sur un bouton
+  backToTop.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
 const getId = (event) => {
   const id = event.target.dataset.id;
   const page = event.target.dataset.page;
