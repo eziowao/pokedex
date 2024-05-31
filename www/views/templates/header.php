@@ -16,22 +16,23 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-purple justify-content-center">
-            <a class="navbar-brand text-center" href="#"><img src="./../../public/assets/img/pokedex_logo.png" class="h-50 w-50" alt="logo pokedex avec un ectoplasma"></a>
+            <a class="navbar-brand text-center" href="../../controllers/typeListController.php"><img src="./../../public/assets/img/pokedex_logo.png" class="h-50 w-50" alt="logo pokedex avec un ectoplasma"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-around w-100 d-flex">
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-4" href="http://localhost:8098/">Accueil <i class="fa-solid fa-house ms-4"></i></a>
+                        <a class="nav-link fs-4" href="../../controllers/typeListController.php">Accueil <i class="fa-solid fa-house ms-4"></i></a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-4" href="http://localhost:8098/favoris">Favoris <i class="fa-solid fa-star ms-4"></i></a>
+                        <a class="nav-link fs-4" href="../../controllers/favourListController.php">Favoris <i class="fa-solid fa-star ms-4"></i></a>
                     </li>
                     <li class="nav-item text-center">
-                        <a class="nav-link fs-4" href="#">Paramètres <i class="fa-solid fa-cog ms-4"></i></a>
+                        <a class="nav-link fs-4" href="../../controllers/configController.php">Paramètres <i class="fa-solid fa-cog ms-4"></i></a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
+    <main class="<?= isset($_COOKIE['theme']) ? $_COOKIE['theme'] : 'light-mode'; ?>">
