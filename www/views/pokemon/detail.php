@@ -5,13 +5,15 @@
         <img src="<?= $pokemonDetail->sprite ?>" alt="sprite du pokemon">
         <h2 class="mx-3 mb-0"><?= $pokemonDetail->name ?></h2>
         <button class="btn-fav border-0" type="btn" data-id="<?= $pokemonDetail->id ?>">
-          <?php if (isset($_COOKIE['favorites'])) {
+          <?php if ($favorites) {
             if (!in_array($pokemonDetail->id, $favorites)) { ?>
-              <i class="add_in_favour bi bi-star fs-5 text-white" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
+              <i class="add_in_favour bi bi-star text-white fs-5" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
             <?php } else { ?>
-              <i class="delete_from_favour bi bi-star-fill fs-5 text-white" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
-          <?php }
-          } ?>
+              <i class="delete_from_favour bi bi-star-fill text-white fs-5" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
+            <?php }
+          } else { ?>
+            <i class="add_in_favour bi bi-star text-white fs-5" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
+          <?php } ?>
         </button>
       </div>
       <p>Génération : <?= $pokemonDetail->apiGeneration ?></p>
