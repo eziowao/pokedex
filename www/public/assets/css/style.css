@@ -546,3 +546,9 @@ main.dark-mode div.bg-light {
     text-decoration: none;
     color: rgb(136, 136, 136);
 }
+
+#back-to-top {
+    color: rgb(136, 136, 136);
+    padding-left: 85%;
+    font-size: 40px;
+}
