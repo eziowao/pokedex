@@ -103,7 +103,7 @@ $typesData = [
 $typeImages = array_column($typesData, null, 'name');
 
 include __DIR__ . '/../views/templates/header.php';
-if (!empty($errors['pokemonDetail'])) {
+if (empty($errors)) {
     include __DIR__ . '/../views/pokemon/detail.php';
 } else {
     include __DIR__ . './../404.php';

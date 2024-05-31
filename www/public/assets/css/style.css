@@ -159,6 +159,7 @@ footer {
 
 .bg-normal {
     background-color: #a8a878;
+    color: #000000;
 }
 
 .bg-fighting {
@@ -167,6 +168,7 @@ footer {
 
 .bg-flying {
     background-color: #a890f0;
+    color: #000000;
 }
 
 .bg-poison {
@@ -175,14 +177,17 @@ footer {
 
 .bg-ground {
     background-color: #e0c068;
+    color: #000000;
 }
 
 .bg-rock {
     background-color: #b8a038;
+    color: black;
 }
 
 .bg-bug {
     background-color: #a8b820;
+    color: #000000;
 }
 
 .bg-ghost {
@@ -191,6 +196,7 @@ footer {
 
 .bg-steel {
     background-color: #b8b8d0;
+    color: #000000;
 }
 
 .bg-fire {
@@ -203,10 +209,12 @@ footer {
 
 .bg-grass {
     background-color: #78c850;
+    color: #000000;
 }
 
 .bg-electric {
     background-color: #f8d030;
+    color: #000000;
 }
 
 .bg-psychic {
@@ -227,6 +235,7 @@ footer {
 
 .bg-fairy {
     background-color: #ee99ac;
+    color: #000000;
 }
 
 /* page pokemon list controller  */
@@ -234,76 +243,91 @@ footer {
 .type-normal {
     background: none;
     background-image: url("../img/cards/cards_normal.png");
+    color: #000000 !important;
 }
 
 .type-fighting {
     background: none;
     background-image: url("../img/cards/cards-fighting.png");
+    color: #000000 !important;
 }
 
 .type-flying {
     background: none;
     background-image: url("../img/cards/cards-flying.png");
+    color: #000000 !important;
 }
 
 .type-poison {
     background: none;
     background-image: url("../img/cards/cards-poison.png");
+    color: #000000 !important;
 }
 
 .type-ground {
     background: none;
     background-image: url("../img/cards/cards-ground.png");
+    color: #000000 !important;
 }
 
 .type-rock {
     background: none;
     background-image: url("../img/cards/cards-rock.png");
+    color: #000000 !important;
 }
 
 .type-bug {
     background: none;
     background-image: url("../img/cards/cards-bug.png");
+
 }
 
 .type-ghost {
     background: none;
     background-image: url("../img/cards/cards-ghost.png");
+
 }
 
 .type-steel {
     background: none;
     background-image: url("../img/cards/cards-steel.png");
+    color: #000000 !important;
 }
 
 .type-fire {
     background: none;
     background-image: url("../img/cards/cards-fire.png");
+    color: #000000 !important;
 }
 
 .type-water {
     background: none;
     background-image: url("../img/cards/cards-water.png");
+    color: #000000 !important;
 }
 
 .type-grass {
     background: none;
     background-image: url("../img/cards/cards-grass.png");
+    color: #000000 !important;
 }
 
 .type-electric {
     background: none;
     background-image: url("../img/cards/cards-electric.png");
+    color: #000000 !important;
 }
 
 .type-psychic {
     background: none;
     background-image: url("../img/cards/cards-psychic.png");
+
 }
 
 .type-ice {
     background: none;
     background-image: url("../img/cards/cards-ice.png");
+    color: #000000 !important;
 }
 
 .type-dragon {
@@ -319,6 +343,7 @@ footer {
 .type-fairy {
     background: none;
     background-image: url("../img/cards/cards-fairy.png");
+    color: #000000 !important;
 }
 
 /* fav icons  */
@@ -471,6 +496,10 @@ footer {
 main.dark-mode {
     background-color: rgb(25, 25, 25);
     color: rgb(243, 243, 243);
+}
+
+main.dark-mode div.bg-light {
+    background-color: #333 !important;
 }
 
 /* search bar result */
