@@ -541,3 +541,8 @@ main.dark-mode div.bg-light {
     width: 386px;
     height: 651px;
 }
+
+.returnLink {
+    text-decoration: none;
+    color: rgb(136, 136, 136);
+}

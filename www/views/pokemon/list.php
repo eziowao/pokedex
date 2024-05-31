@@ -11,6 +11,7 @@
 
 <div class="container">
   <div class="row justify-content-center">
+    <a class="returnLink" href="http://localhost:8098/accueil"> <i class="bi bi-arrow-left"></i> Revenir aux types</a>
     <h1 id="<?= $typeName ?>" class="text-center my-5"> <?= $typeName ?> </h1>
 
     <?php foreach ($listOfPokemons as $pokemon) : ?>
