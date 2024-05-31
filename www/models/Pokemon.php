@@ -4,8 +4,12 @@ require_once __DIR__ . '/../config/config.php';
 function allPokemonsOfSameType($type)
 {
     $linkApi = ONE_TYPE_POKEMONS . $type;
-    $json = file_get_contents($linkApi);
-    $data = json_decode($json);
+    if (!$linkApi) {
+        $data = false;
+    } else {
+        $json = @file_get_contents($linkApi);
+        $data = json_decode($json);
+    }
     return $data; // tableau d'objets
 }
 
