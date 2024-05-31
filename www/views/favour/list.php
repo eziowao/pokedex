@@ -1,10 +1,10 @@
-<div class="container my-5">
+<div class="container py-5">
   <div class="row justify-content-center">
     <h1 class="text-center">Vos favoris</h1>
     <?php if (isset($favoritePokemons)) {
       foreach ($favoritePokemons as $pokemon) { ?>
 
-        <div id="pokemon<?= $pokemon->id ?>" class="type-normal text-light card m-3 border-0" style="width: 286px; height: 334px">
+        <div id="pokemon<?= $pokemon->id ?>" class="<?= $pokemon->typeClass ?> type-normal text-light card m-3 border-0">
           <div class="card-body">
             <div class="d-flex align-items-baseline ">
               <div class="col-10">
