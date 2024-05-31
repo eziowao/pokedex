@@ -8,8 +8,12 @@ function allPokemonsOfSameType($type)
     // var_dump(curl_exec($ch));
 
     $linkApi = ONE_TYPE_POKEMONS . $type;
-    $json = file_get_contents($linkApi);
-    $data = json_decode($json);
+    if (!$linkApi) {
+        $data = false;
+    }else {
+        $json = @file_get_contents($linkApi);
+        $data = json_decode($json);
+    }
     return $data; // tableau d'objets
 }
 
