@@ -158,31 +158,31 @@ footer {
 /* ######### BACKGROUND DE TYPES ##########*/
 
 .bg-normal {
-    background-color: #A8A878;
+    background-color: #a8a878;
 }
 
 .bg-fighting {
-    background-color: #C03028;
+    background-color: #c03028;
 }
 
 .bg-flying {
-    background-color: #A890F0;
+    background-color: #a890f0;
 }
 
 .bg-poison {
-    background-color: #A040A0;
+    background-color: #a040a0;
 }
 
 .bg-ground {
-    background-color: #E0C068;
+    background-color: #e0c068;
 }
 
 .bg-rock {
-    background-color: #B8A038;
+    background-color: #b8a038;
 }
 
 .bg-bug {
-    background-color: #A8B820;
+    background-color: #a8b820;
 }
 
 .bg-ghost {
@@ -190,35 +190,35 @@ footer {
 }
 
 .bg-steel {
-    background-color: #B8B8D0;
+    background-color: #b8b8d0;
 }
 
 .bg-fire {
-    background-color: #F08030;
+    background-color: #f08030;
 }
 
 .bg-water {
-    background-color: #6890F0;
+    background-color: #6890f0;
 }
 
 .bg-grass {
-    background-color: #78C850;
+    background-color: #78c850;
 }
 
 .bg-electric {
-    background-color: #F8D030;
+    background-color: #f8d030;
 }
 
 .bg-psychic {
-    background-color: #F85888;
+    background-color: #f85888;
 }
 
 .bg-ice {
-    background-color: #98D8D8;
+    background-color: #98d8d8;
 }
 
 .bg-dragon {
-    background-color: #7038F8;
+    background-color: #7038f8;
 }
 
 .bg-dark {
@@ -226,104 +226,99 @@ footer {
 }
 
 .bg-fairy {
-    background-color: #EE99AC;
+    background-color: #ee99ac;
 }
-
-
-
-
-
 
 /* page pokemon list controller  */
 
 .type-normal {
     background: none;
-    background-image: url('../img/cards/cards_normal.png');
+    background-image: url("../img/cards/cards_normal.png");
 }
 
 .type-fighting {
     background: none;
-    background-image: url('../img/cards/cards-fighting.png');
+    background-image: url("../img/cards/cards-fighting.png");
 }
 
 .type-flying {
     background: none;
-    background-image: url('../img/cards/cards-flying.png');
+    background-image: url("../img/cards/cards-flying.png");
 }
 
 .type-poison {
     background: none;
-    background-image: url('../img/cards/cards-poison.png');
+    background-image: url("../img/cards/cards-poison.png");
 }
 
 .type-ground {
     background: none;
-    background-image: url('../img/cards/cards-ground.png');
+    background-image: url("../img/cards/cards-ground.png");
 }
 
 .type-rock {
     background: none;
-    background-image: url('../img/cards/cards-rock.png');
+    background-image: url("../img/cards/cards-rock.png");
 }
 
 .type-bug {
     background: none;
-    background-image: url('../img/cards/cards-bug.png');
+    background-image: url("../img/cards/cards-bug.png");
 }
 
 .type-ghost {
     background: none;
-    background-image: url('../img/cards/cards-ghost.png');
+    background-image: url("../img/cards/cards-ghost.png");
 }
 
 .type-steel {
     background: none;
-    background-image: url('../img/cards/cards-steel.png');
+    background-image: url("../img/cards/cards-steel.png");
 }
 
 .type-fire {
     background: none;
-    background-image: url('../img/cards/cards-fire.png');
+    background-image: url("../img/cards/cards-fire.png");
 }
 
 .type-water {
     background: none;
-    background-image: url('../img/cards/cards-water.png');
+    background-image: url("../img/cards/cards-water.png");
 }
 
 .type-grass {
     background: none;
-    background-image: url('../img/cards/cards-grass.png');
+    background-image: url("../img/cards/cards-grass.png");
 }
 
 .type-electric {
     background: none;
-    background-image: url('../img/cards/cards-electric.png');
+    background-image: url("../img/cards/cards-electric.png");
 }
 
 .type-psychic {
     background: none;
-    background-image: url('../img/cards/cards-psychic.png');
+    background-image: url("../img/cards/cards-psychic.png");
 }
 
 .type-ice {
     background: none;
-    background-image: url('../img/cards/cards-ice.png');
+    background-image: url("../img/cards/cards-ice.png");
 }
 
 .type-dragon {
     background: none;
-    background-image: url('../img/cards/cards-dragon.png');
+    background-image: url("../img/cards/cards-dragon.png");
 }
 
 .type-dark {
     background: none;
-    background-image: url('../img/cards/cards-dark.png');
+    background-image: url("../img/cards/cards-dark.png");
 }
 
 .type-fairy {
     background: none;
-    background-image: url('../img/cards/cards-fairy.png');
+    background-image: url("../img/cards/cards-fairy.png");
 }
 
 /* fav icons  */
@@ -332,6 +327,7 @@ footer {
     background: none;
 }
 
+/* 
 .bi-star-fill {
     color: yellow;
 }

@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../models/Pokemon.php';
 require_once __DIR__ . './../models/Type.php';
 
+$favorites = json_decode($_COOKIE['favorites']);
 
 try {
     $allTypes = AllTypes();

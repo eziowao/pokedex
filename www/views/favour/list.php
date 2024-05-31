@@ -11,7 +11,7 @@
                 <p class="fs-5 fw-semibold"><?= $pokemon->name; ?></p>
               </div>
 
-              <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"> <i id="favDelete" class="delete_from_favour bi bi-star-fill" data-page="favoris" data-id="<?= $pokemon->id ?>"></i>
+              <button class="btn-fav border-0" type="btn" data-id="<?= $pokemon->id ?>"> <i id="favDelete" class="delete_from_favour bi bi-star-fill text-white" data-page="favoris" data-id="<?= $pokemon->id ?>"></i>
               </button>
 
             </div>
