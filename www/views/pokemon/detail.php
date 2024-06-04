@@ -1,26 +1,70 @@
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex</title>
-</head>
-
 <body>
-<div class="container mt-4">
-<div class="pokemon-name <?= implode(' ', $typeClasses) ?> d-flex flex-column align-items-center py-3">
-            <div class="d-flex align-items-center">
-                <img src="<?= $pokemonDetail->sprite ?>" alt="sprite du pokemon">
-                <h2 class="ms-5"><?= $pokemonDetail->name ?></h2>
-                <i class="fa-regular fa-star fa-lg ms-3"></i>
-            </div>
-            <p>Génération : <?= $pokemonDetail->apiGeneration ?></p>
+  <div class="container pt-4">
+    <div class="pokemon-name <?= implode(' ', $typeClasses) ?> text-center py-3">
+      <div class="d-flex justify-content-center align-items-center">
+        <img src="<?= $pokemonDetail->sprite ?>" alt="sprite du pokemon">
+        <h2 class="mx-3 mb-0"><?= $pokemonDetail->name ?></h2>
+        <button class="btn-fav border-0" type="btn" data-id="<?= $pokemonDetail->id ?>">
+          <?php if ($favorites) {
+            if (!in_array($pokemonDetail->id, $favorites)) { ?>
+              <i class="add_in_favour bi bi-star text-white fs-5" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
+            <?php } else { ?>
+              <i class="delete_from_favour bi bi-star-fill text-white fs-5" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
+            <?php }
+          } else { ?>
+            <i class="add_in_favour bi bi-star text-white fs-5" data-page="list" data-id="<?= $pokemonDetail->id ?>"></i>
+          <?php } ?>
+        </button>
+      </div>
+      <p>Génération : <?= $pokemonDetail->apiGeneration ?></p>
+    </div>
+
+    <div class="pokemon-image text-center my-4">
+      <img src="<?= $pokemonDetail->image ?>" alt="image du pokemon" class="img-fluid">
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="pokemon-stats">
+          <h3>Stats :</h3>
+          <ul>
+            <li>HP: <?= $pokemonDetail->stats->HP ?></li>
+            <li>Attaque : <?= $pokemonDetail->stats->attack ?></li>
+            <li>Defense : <?= $pokemonDetail->stats->defense ?></li>
+            <li>Attaque spéciale : <?= $pokemonDetail->stats->special_attack ?></li>
+            <li>Défense spéciale : <?= $pokemonDetail->stats->special_defense ?></li>
+            <li>Vitesse : <?= $pokemonDetail->stats->speed ?></li>
+          </ul>
         </div>
-        <div class="pokemon-image text-center my-4">
-            <img src="<?= $pokemonDetail->image ?>" alt="image du pokemon">
+      </div>
+
+      <div class="col-md-4 text-center">
+        <h3>Arbre d'évolution</h3>
+        <div class="evolution-tree d-flex justify-content-center flex-wrap">
+          <?php
+          if ($pokemonDetail->apiPreEvolution != 'none' && !empty($pokemonDetail->apiPreEvolution)) {
+            if ($pokemonPreEvolution->apiPreEvolution != 'none' && !empty($pokemonPreEvolution->apiPreEvolution)) { ?>
+              <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $firstPokemon ?>"><img src="<?= $firstImage ?>" alt="1er Pokémon" class="img-fluid"></a></p>
+            <?php } ?>
+            <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $idPreEvolution ?>"><img src="<?= $infoPreEvolution ?>" alt="Précédent Pokémon" class="img-fluid"></a></p>
+          <?php } ?>
+          <img src="<?= $pokemonDetail->sprite ?>" alt="image du pokemon" class="img-fluid">
+          <?php
+          if (count($pokemonDetail->apiEvolutions) > 1) {
+            foreach ($evolutions as $key => $evolution) {
+              $idPokemonEvolution = $evolution->pokedexId;
+              $pokemonEvolution = pokemonInformation($idPokemonEvolution);
+              $infoImageEvolutions = checkPreEvolution($pokemonEvolution); ?>
+              <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $idPokemonEvolution ?>"><img src="<?= $infoImageEvolutions ?>" alt="Pokémon suivant" class="img-fluid"></a></p>
+            <?php }
+          } elseif ($pokemonDetail->apiEvolutions != 'none' && !empty($pokemonDetail->apiEvolutions)) { ?>
+            <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $idEvolutions ?>"><img src="<?= $infoEvolutions ?>" alt="Pokémon suivant" class="img-fluid"></a></p>
+            <?php if ($pokemonEvolutions->apiEvolutions != 'none' && !empty($pokemonEvolutions)) { ?>
+              <p><a href="<?= '/controllers/pokemonDetailController.php?id=' . $lastPokemon ?>"><img src="<?= $lastImage ?>" alt="" class="img-fluid"></a></p>
+            <?php } ?>
+          <?php } ?>
         </div>
+<<<<<<< HEAD
         <div class="d-flex justify-content-between">
             <div class="pokemon-stats ms-5">
                 <h3>Stats :</h3>
@@ -77,59 +121,75 @@
                         <h3><?= $type->name ?></h3>
                     </div>
                 <?php endforeach; ?>
+=======
+      </div>
+
+      <div class="col-md-4">
+        <div class="pokemon-types">
+          <div class="resistance-section bg-light p-3">
+            <h3>Types :</h3>
+            <?php foreach ($pokemonDetail->apiTypes as $type) : ?>
+              <div class="d-inline-block text-center mr-2">
+                <img src="<?= htmlspecialchars($type->image) ?>" alt="<?= htmlspecialchars($type->name) ?>" title="<?= htmlspecialchars($type->name) ?>" class="img-fluid">
+                <h3><?= $type->name ?></h3>
+>>>>>>> 1499e58f143657e55569f5614e8f8cfeb51c1c2f
               </div>
-            </div>
+            <?php endforeach; ?>
+          </div>
         </div>
-  <div class="container mt-5">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="resistance-section bg-light">
-                    <h3>Très faible à :</h3>
-                    <?php foreach ($pokemonDetail->apiResistances as $resistance): 
-                        if ($resistance->damage_multiplier == 4): ?>
-                            <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
-                            <span class="type-name"><?= $resistance->name ?></span><br>
-                        <?php endif; 
-                    endforeach; ?>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="resistance-section bg-light">
-                    <h3>Faible à :</h3>
-                    <?php foreach ($pokemonDetail->apiResistances as $resistance): 
-                        if ($resistance->damage_multiplier == 2): ?>
-                            <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
-                            <span class="type-name"><?= $resistance->name ?></span><br>
-                        <?php endif; 
-                    endforeach; ?>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="resistance-section bg-light">
-                    <h3>Résistant à :</h3>
-                    <?php foreach ($pokemonDetail->apiResistances as $resistance): 
-                        if ($resistance->damage_multiplier == 0.5): ?>
-                            <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
-                            <span class="type-name"><?= $resistance->name ?></span><br>
-                        <?php endif; 
-                    endforeach; ?>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="resistance-section bg-light">
-                    <h3>Très résistant à :</h3>
-                    <?php foreach ($pokemonDetail->apiResistances as $resistance): 
-                        if ($resistance->damage_multiplier == 0.25): ?>
-                            <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
-                            <span class="type-name"><?= $resistance->name ?></span><br>
-                        <?php endif; 
-                    endforeach; ?>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
   </div>
-    <!-- !!!! Exemple de contenu de variable $pokemonDetail
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="resistance-section bg-light">
+          <h3>Très faible à :</h3>
+          <?php foreach ($pokemonDetail->apiResistances as $resistance) :
+            if ($resistance->damage_multiplier == 4) : ?>
+              <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
+              <span class="type-name"><?= $resistance->name ?></span><br>
+          <?php endif;
+          endforeach; ?>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="resistance-section bg-light">
+          <h3>Faible à :</h3>
+          <?php foreach ($pokemonDetail->apiResistances as $resistance) :
+            if ($resistance->damage_multiplier == 2) : ?>
+              <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
+              <span class="type-name"><?= $resistance->name ?></span><br>
+          <?php endif;
+          endforeach; ?>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="resistance-section bg-light">
+          <h3>Résistant à :</h3>
+          <?php foreach ($pokemonDetail->apiResistances as $resistance) :
+            if ($resistance->damage_multiplier == 0.5) : ?>
+              <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
+              <span class="type-name"><?= $resistance->name ?></span><br>
+          <?php endif;
+          endforeach; ?>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="resistance-section bg-light">
+          <h3>Très résistant à :</h3>
+          <?php foreach ($pokemonDetail->apiResistances as $resistance) :
+            if ($resistance->damage_multiplier == 0.25) : ?>
+              <img src="<?= getTypeImage($resistance->name, $typeImages) ?>" class="type-icon" alt="<?= $resistance->name ?>">
+              <span class="type-name"><?= $resistance->name ?></span><br>
+          <?php endif;
+          endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- !!!! Exemple de contenu de variable $pokemonDetail
     {
  "id": 850,
   "pokedexId": 850,
@@ -212,7 +272,3 @@
     }...
   ]
 } -->
-
-</body>
-
-</html>

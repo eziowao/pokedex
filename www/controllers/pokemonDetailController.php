@@ -2,6 +2,11 @@
 require_once __DIR__ . '/../models/Pokemon.php';
 require_once __DIR__ . '/../models/Type.php';
 
+if (array_key_exists('favorites', $_COOKIE)) {
+    $favorites = json_decode($_COOKIE['favorites']);
+} else {
+    $favorites = '';
+}
 
 try {
     $allTypes = AllTypes();
@@ -12,7 +17,6 @@ try {
     $error = $e->getMessage();
     header('Location: ./../404.php');
 }
-
 
 try {
     if (array_key_exists('id', $_GET) && intval($_GET['id']) != null) {
@@ -43,8 +47,13 @@ try {
             // Le(s) prochaine(s) évolution(s) Pokémon(s), vérifier la présence des Evolution
             if (count($pokemonDetail->apiEvolutions) > 1) {
                 $evolutions = $pokemonDetail->apiEvolutions;
+<<<<<<< HEAD
             }elseif (!empty($pokemonDetail->apiEvolutions)) {
                 if (array_key_exists(0,$pokemonDetail->apiEvolutions)) {
+=======
+            } elseif (!empty($pokemonDetail->apiEvolutions)) {
+                if (array_key_exists(0, $pokemonDetail->apiEvolutions)) {
+>>>>>>> 1499e58f143657e55569f5614e8f8cfeb51c1c2f
                     // Récupération id Pokémon
                     $idEvolutions = $pokemonDetail->apiEvolutions[0]->pokedexId;
                     // Info Évolution
@@ -53,7 +62,11 @@ try {
                     $infoEvolutions = checkPreEvolution($pokemonEvolutions);
 
                     // Condition pour vérifier si il y a encore une Evolution
+<<<<<<< HEAD
                     if (array_key_exists(0,$pokemonEvolutions->apiEvolutions)) {
+=======
+                    if (array_key_exists(0, $pokemonEvolutions->apiEvolutions)) {
+>>>>>>> 1499e58f143657e55569f5614e8f8cfeb51c1c2f
                         $lastPokemon = $pokemonEvolutions->apiEvolutions[0];
                         // Récupération id 1er pokemon, peut être fusionné ligne du dessus et de dessous 
                         $lastPokemon = $lastPokemon->pokedexId;
@@ -74,6 +87,7 @@ try {
     $errors = $e->getMessage();
 }
 
+<<<<<<< HEAD
 function getTypeImage($typeName, $typeImages) {
     return isset($typeImages[$typeName]) ? $typeImages[$typeName]['image'] : '';
 }
@@ -81,6 +95,13 @@ function getTypeImage($typeName, $typeImages) {
 
 
 
+=======
+function getTypeImage($typeName, $typeImages)
+{
+    return isset($typeImages[$typeName]) ? $typeImages[$typeName]['image'] : '';
+}
+
+>>>>>>> 1499e58f143657e55569f5614e8f8cfeb51c1c2f
 $typesData = [
     ["id" => 37, "name" => "Normal", "image" => "https://static.wikia.nocookie.net/pokemongo/images/f/fb/Normal.png", "englishName" => "normal"],
     ["id" => 38, "name" => "Combat", "image" => "https://static.wikia.nocookie.net/pokemongo/images/3/30/Fighting.png", "englishName" => "fighting"],
@@ -107,7 +128,11 @@ $typeImages = array_column($typesData, null, 'name');
 include __DIR__ . '/../views/templates/header.php';
 if (empty($errors)) {
     include __DIR__ . '/../views/pokemon/detail.php';
+<<<<<<< HEAD
 }else {
+=======
+} else {
+>>>>>>> 1499e58f143657e55569f5614e8f8cfeb51c1c2f
     include __DIR__ . './../404.php';
 }
 include __DIR__ . '/../views/templates/footer.php';

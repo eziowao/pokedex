@@ -1,9 +1,5 @@
-function Toggle() {
-    const favDelete = document.getElementById('favDelete');
-
-    if (favDelete.style.color === 'yellow') {
-        favDelete.style.color = 'grey';
-    } else {
-        favDelete.style.color = 'yellow';
-    }
-}
+new TypeIt("#simpleUsage", {
+    strings: "Dark mode ",
+    speed: 50,
+    waitUntilVisible: true,
+}).go();

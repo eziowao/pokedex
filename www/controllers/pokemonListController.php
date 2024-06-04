@@ -6,6 +6,12 @@ $types = AllTypes();
 $typeName = null;
 $typeClass = null;
 
+if (array_key_exists('favorites', $_COOKIE)) {
+    $favorites = json_decode($_COOKIE['favorites']);
+} else {
+    $favorites = '';
+}
+
 try {
     if (array_key_exists('type', $_GET) && $_GET['type'] != null) {
         $typeId = $_GET['type'];
