@@ -1,4 +1,3 @@
-<!-- Une fois la gestion d'erreure terminée, enlever les includes... -->
 
 
 <div class="container text-center">
@@ -9,4 +8,5 @@
 </div>
 =======
 </div>
+
 >>>>>>> 1499e58f143657e55569f5614e8f8cfeb51c1c2f

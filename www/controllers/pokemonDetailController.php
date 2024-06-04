@@ -78,6 +78,7 @@ try {
     $errors = $e->getMessage();
 }
 
+
 function getTypeImage($typeName, $typeImages)
 {
     return isset($typeImages[$typeName]) ? $typeImages[$typeName]['image'] : '';
